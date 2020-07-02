@@ -1,0 +1,25 @@
+大商所部分
+    0. 把最后交易日小于20100104的全部去掉
+    1.把合约代码进行字符串分割，加入新的品种列
+    2. 分割每个品种（也可不分割，放到最后）
+    3. 对样本时间进行循环：
+        把最后交易日变成pd.datatime
+        把每个样本时间<=最后交易的，取出，拿出对应时间。
+        生成一个df，把时间和合约做str的结合 拆成list
+        以改样本时间，与对应品种的df
+        合并所有df
+    完成
+
+上海期货交易所部分：
+    注意时间变换，json数据的也可能会变换
+    解析json数据
+    shfe.com.cn/statements/dataview.html?paramid=delaymarket_cu
+郑州期货交易所部分：
+
+#20100104-2010824
+http://www.czce.com.cn/cn/exchange/jyxx/hq/hq20100107.html
+#20100825-20150930
+http://www.czce.com.cn/cn/exchange/2010/datadaily/20100825.htm
+20151001-
+http://www.czce.com.cn/cn/DFSStaticFiles/Future/2019/20191127/FutureDataDaily.htm
+直接解析 同样要考虑时间问题，可能同样是三个时间段
